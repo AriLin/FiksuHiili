@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="drive" Id="{4686aff2-89c7-4ad6-a3cb-d034c3d85a54}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// -------- motor 1 params --------------------------	
+	ATV_State AT %I* : WORD;
+	PLC_state AT %I* : UINT;
+	ATV_TPDO_Input1_Status_Word AT %I* : WORD;
+	ATV_TPDO_Input2_Control_Effort AT %I* : WORD;
+	ATV_TPDO_Input3 AT %I* : WORD; 
+	ATV_TPDO_Input4 AT %I* : WORD;
+	ATV_TPDO_Input5 AT %I* : WORD;
+	ATV_TPDO_Input6 AT %I* : WORD;
+	ATV_RPDO_Output1_Control_Word AT %Q* : WORD;
+	ATV_RPDO_Output2_Target_Velocity AT %Q* : WORD;
+	ATV_RPDO_Output3 AT %Q* : WORD; 
+	ATV_RPDO_Output4 AT %Q* : WORD; 
+	ATV_RPDO_Output5 AT %Q* : WORD; 
+	ATV_RPDO_Output6 AT %Q* : WORD; 
+// -------- motor 1 params --------------------------
+
+// -------- motor 2 params --------------------------
+{attribute 'OPC.UA.DA' := '1'} 
+bRemovalMotor AT %Q* : BOOL;
+// -------- motor 2 params --------------------------
+
+//------------ fan params ----------------
+{attribute 'OPC.UA.DA' := '1'} 
+bGasfan AT %Q* : BOOL;
+//------------- fan params ------------------
+
+//---------- motor 3 params--------------------------
+{attribute 'OPC.UA.DA' := '1'} 
+bFeedMotor2 AT %Q* : BOOL;
+//----------- motor 3 params ------------------------
+
+//---------- switches -------------------------------
+{attribute 'OPC.UA.DA' := '1'} 
+bStartProcess AT %I* :BOOL;
+
+bEstop      AT %I* 	 :BOOL; 
+
+bM1switch AT %I* 	 :BOOL; 
+
+bM2switch AT %I* 	 :BOOL;
+
+RemovalSwitch AT %I* :BOOL;
+
+{attribute 'OPC.UA.DA' := '1'} 
+bShortFeed AT %I* 	 :BOOL; 
+
+bCompressor  	 	 :BOOL; 
+
+{attribute 'OPC.UA.DA' := '1'} 
+ValveSwitch AT %I* 	 :BOOL;
+//---------- switches -----------------------------
+
+// ---------Lamps----------------------------------
+// lamps on the door of the cabinet 
+bEmergencyLamp1 AT %Q*   :BOOL; 
+
+{attribute 'OPC.UA.DA' := '1'} 
+bProcessActive AT %Q*    :BOOL;
+ 
+bRemovalSequenceLamp AT %Q*   :BOOL;
+
+{attribute 'OPC.UA.DA' := '1'} 
+bM1active 		AT %Q* 	 :BOOL;
+
+{attribute 'OPC.UA.DA' := '1'} 
+bM2active		AT %Q* 	 :BOOL;
+
+bVacuumActive   AT %Q* 	 :BOOL; 
+
+bValveLamp AT %Q* 		 :BOOL; 
+
+bFeedMotor2Lamp AT %Q*   :BOOL;
+
+//----- lamps inside the switches -------------
+bstartprocessSwitchlamp AT %Q* :BOOL;
+
+bfeedmotorSwitchlamp AT %Q* :BOOL; 
+
+bremovalmotorSwitchlamp AT %Q* :BOOL;  
+
+bValveSwitchLamp AT %Q* :BOOL;
+
+bEmptySystemSwitchLamp at %Q* :BOOL; 
+// ---------Lamps-----------------------------------
+
+//----------- counter variables ---------------------
+
+ifeedmotor1count: INT;
+itopvalvecount: INT := 1;
+
+//----------- counter variables ---------------------
+
+
+//----status variables-------------
+bM1run  	 :BOOL;
+ProcessActive :BOOL;
+bM1status    : BOOL;    				// tells if the motor is on/off
+//-----status variables------------
+
+
+
+//---------Valve control ------------------------------------
+{attribute 'OPC.UA.DA' := '1'} 
+OpenTopValve AT %Q* : BOOL;
+
+{attribute 'OPC.UA.DA' := '1'} 
+CloseTopValve AT %Q*: BOOL;
+ 
+{attribute 'OPC.UA.DA' := '1'} 
+OpenBottomValve AT %Q* : BOOL;
+
+{attribute 'OPC.UA.DA' := '1'} 
+CloseBottomValve AT %Q*: BOOL; 
+//----------Valve control -----------------------------------
+
+//----- Vacuum pump --------------------------------------
+{attribute 'OPC.UA.DA' := '1'} 
+bVacuum  AT %Q*	 : BOOL;
+//-----Vacuum pump ---------------------------------------
+
+
+//------------Temperature variables ---------------------------
+RawThermoCouple1Value  AT %I* :INT;
+ScaledThermoCouple1Value: REAL; 
+RawThermoCouple2Value AT %I*: INT;
+
+{attribute 'OPC.UA.DA' := '1'} 
+ScaledThermoCouple2Value: REAL; 
+//-----------Temperature variables -----------------------------
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

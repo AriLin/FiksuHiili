@@ -1,0 +1,769 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.35">
+	<ImageDatas>
+		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000120b0000120b0000100000001000000000000000000080000080000000808000800000008000800080800000c0c0c000808080000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff00fffffffffffffffffffffffffff00ffffffffffffff00fff0000000000000fff0000000000000fff000000000000099900000000000009990000000000000fff0000000000000ffffff00ffffff00fff00000ffffff00fff00000fffffffffffffffffffffffffffffffffffffffffff</ImageData>
+	</ImageDatas>
+	<Project ProjectGUID="{993C5307-3B7F-4E4E-9A00-8754BA943C6A}" TargetNetId="5.27.137.92.1.1" ShowHideConfigurations="#x106">
+		<System>
+			<Licenses>
+				<Target>
+					<ManualSelect>{BDCC0070-42D5-49AE-ABF1-1D4434813D60}</ManualSelect>
+				</Target>
+			</Licenses>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+				<Task Id="4" Priority="30" CycleTime="2000000" AmsPort="351" DisableFpExceptions="true" AdtTasks="true">
+					<Name>VISU_TASK</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{EA40CD76-D8D1-48A9-87A3-340A092E633F}" Name="ProcessControl" PrjFilePath="ProcessControl\ProcessControl.plcproj" TmcFilePath="ProcessControl\ProcessControl.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="ProcessControl\ProcessControl.tmc" TmcHash="{A084AD65-4C61-6EC0-BE1F-199B0E55B3D4}">
+					<Name>ProcessControl Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>drive.ATV_State</Name>
+							<Comment><![CDATA[ -------- motor 1 params --------------------------	]]></Comment>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.PLC_state</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_TPDO_Input1_Status_Word</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_TPDO_Input2_Control_Effort</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_TPDO_Input3</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_TPDO_Input4</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_TPDO_Input5</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_TPDO_Input6</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.bStartProcess</Name>
+							<Comment><![CDATA[----------- motor 3 params ------------------------
+---------- switches -------------------------------]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bEstop</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bM1switch</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bM2switch</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.RemovalSwitch</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bShortFeed</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.ValveSwitch</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.RawThermoCouple1Value</Name>
+							<Comment><![CDATA[-----Vacuum pump ---------------------------------------
+------------Temperature variables ---------------------------]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>drive.RawThermoCouple2Value</Name>
+							<Type>INT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>drive.bRemovalMotor</Name>
+							<Comment><![CDATA[ -------- motor 1 params --------------------------
+ -------- motor 2 params --------------------------]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_RPDO_Output1_Control_Word</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_RPDO_Output2_Target_Velocity</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_RPDO_Output3</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_RPDO_Output4</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_RPDO_Output5</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.ATV_RPDO_Output6</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>drive.bGasfan</Name>
+							<Comment><![CDATA[ -------- motor 2 params --------------------------
+------------ fan params ----------------]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bFeedMotor2</Name>
+							<Comment><![CDATA[------------- fan params ------------------
+---------- motor 3 params--------------------------]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bEmergencyLamp1</Name>
+							<Comment><![CDATA[---------- switches -----------------------------
+ ---------Lamps----------------------------------
+ lamps on the door of the cabinet ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bProcessActive</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bRemovalSequenceLamp</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bM1active</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bM2active</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bVacuumActive</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bValveLamp</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bFeedMotor2Lamp</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bstartprocessSwitchlamp</Name>
+							<Comment><![CDATA[----- lamps inside the switches -------------]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bfeedmotorSwitchlamp</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bremovalmotorSwitchlamp</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bValveSwitchLamp</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bEmptySystemSwitchLamp</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.OpenTopValve</Name>
+							<Comment><![CDATA[-----status variables------------
+---------Valve control ------------------------------------]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.CloseTopValve</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.OpenBottomValve</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.CloseBottomValve</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>drive.bVacuum</Name>
+							<Comment><![CDATA[----------Valve control -----------------------------------
+----- Vacuum pump --------------------------------------]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<UnrestoredVarLinks ImportTime="2023-08-02T11:15:24">
+						<OwnerA Name="OutputSrc" Prefix="TIPC^ProcessControl^ProcessControl Instance" Type="2">
+							<OwnerB Name="TIID^Device 2 (CX-BK)^Box 1 (CX-BK)">
+								<Link VarA="drive.LeftSolenoid" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Term 3 (KL2114)^Channel 2^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="drive.LeftSolenoid2" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Term 3 (KL2114)^Channel 4^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="drive.RightSolenoid" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Term 3 (KL2114)^Channel 3^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="drive.RightSolenoid2" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Term 3 (KL2114)^Channel 1^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="drive.bfeedmotorlamp" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Term 7 (KL2408)^Channel 2^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="drive.bremovalmotorlamp" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Term 7 (KL2408)^Channel 1^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="drive.bstartprocesslamp" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Term 7 (KL2408)^Channel 4^Output" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<Contexts>
+						<Context>
+							<Id NeedCalleeCall="true">0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+						<Context>
+							<Id NeedCalleeCall="true">1</Id>
+							<Name>VISU_TASK</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>30</Priority>
+							<CycleTime>200000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+						<TaskPouOid Prio="30" OTCID="#x08502002"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+		<Io>
+			<Device Id="3" DevType="111" DevFlags="#x0003" AmsPort="28675" AmsNetId="5.27.137.92.4.1" RemoteName="Device 3 (EtherCAT)" InfoImageId="3">
+				<Name>Device 3 (EtherCAT)</Name>
+				<AddressInfo>
+					<Pnp>
+						<DeviceDesc>PCI\TcI8254x1</DeviceDesc>
+						<DeviceName>PCI\TCI8254X1</DeviceName>
+						<DeviceData>0001051b895c</DeviceData>
+					</Pnp>
+				</AddressInfo>
+				<Image Id="2" AddrType="9" ImageType="3">
+					<Name>Image</Name>
+				</Image>
+				<Box Id="2" BoxType="9099" BoxFlags="#x00000020">
+					<Name>Box 2 (ATV320 EtherCAT)</Name>
+					<ImageId>1000</ImageId>
+					<EtherCAT SlaveType="2" PdiType="#x0e08" MboxDataLinkLayer="true" StateMBoxPolling="true" CfgModeSafeOp="true" CycleMBoxPollingTime="0" CoeType="13" EoeType="3" VendorId="#x0800005a" ProductCode="#x00000389" RevisionNo="#x0001000e" InfoDataAddr="true" WdDivider0400="25000" DdTime0420="100" EnableWdDivider0400="true" EnableWdTime0420="true" TimeoutStateChange1="6000" TimeoutStateChange2="5000" TimeoutStateChange3="6000" CheckRevisionNoType="2" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="ATV320 EtherCAT" Desc="ATV320 EtherCAT" PortABoxInfo="#x00ffffff">
+						<SyncMan>001c44002600010001000000200050014400001c26010000</SyncMan>
+						<SyncMan>001e44002200010002000000200050014400001e22010000</SyncMan>
+						<SyncMan>001004006400010003000000000000000000001064010000</SyncMan>
+						<SyncMan>001604002000010004000000000000000000001620010000</SyncMan>
+						<Fmmu>0000000000000000001000020100000001000000000000000000000000000000</Fmmu>
+						<Fmmu>0000000000000000001600010100000002000000000000000000000000000000</Fmmu>
+						<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+						<SwitchPortData>01000000e903fea90000ffff01ddfea900000000426f785f325f5f4154563332305f450000000000000000000000000000000000000000000000000000000000</SwitchPortData>
+						<Pdo Name="Inputs" Index="#x1a00" Flags="#x0000" SyncMan="3">
+							<Entry Name="Status word" Index="#x6041">
+								<Type>UINT</Type>
+							</Entry>
+							<Entry Name="Control Effort" Index="#x6044">
+								<Type>INT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Outputs" Index="#x1600" InOut="1" Flags="#x0000" SyncMan="2">
+							<Entry Name="Control word" Index="#x6040">
+								<Type>UINT</Type>
+							</Entry>
+							<Entry Name="Target Velocity" Index="#x6042">
+								<Type>INT</Type>
+							</Entry>
+						</Pdo>
+						<CoeProfile ProfileNo="65938"/>
+					</EtherCAT>
+				</Box>
+				<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120"/>
+			</Device>
+			<Device Id="2" DevType="120">
+				<Name>Device 2 (CX-BK)</Name>
+				<DevData>000080fd0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000010000000700ec150050010028087c0a01000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DevData>
+				<Image Id="4" AddrType="1" ImageType="3" SizeIn="14" SizeOut="12">
+					<Name>Image</Name>
+				</Image>
+				<Box Id="1" BoxType="9703" AmsPort="28928">
+					<Name>Box 1 (CX-BK)</Name>
+					<ImageId>5</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Inputs</Name>
+						<Var>
+							<Name>State</Name>
+							<Comment><![CDATA[Bit 0 = K-Bus Err
+Bit 1 = Terminal State Err
+Bit 2 = Process Data Length Err
+Bit 7 = K-Bus invalid
+Bit 8 = No valid Inputs
+Bit 9 = K-Bus Input Update busy
+Bit 10 = K-Bus Output Update busy
+Bit 11 = Watchdog Err
+Bit 15 = Acyc. Function atcive (e.g. K-Bus Reset)
+]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Outputs</Name>
+						<Var>
+							<Name>Ctrl</Name>
+							<Type>UINT</Type>
+						</Var>
+					</Vars>
+					<BusCoupler ComplexTermSupport="true" NewHardware="true">
+						<Term Id="2" TermType="#x450" Fieldbus="6">
+							<Name>Term 2 (KL1104)</Name>
+							<ImageId>7</ImageId>
+							<Vars VarGrpType="3">
+								<Name>Channel 1</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>80</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 2</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>81</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 3</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>82</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 4</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>83</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+						</Term>
+						<Term Id="3" TermType="#x842" Fieldbus="6">
+							<Name>Term 3 (KL2114)</Name>
+							<ImageId>31</ImageId>
+							<Vars VarGrpType="3">
+								<Name>Channel 1</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>80</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 2</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>81</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 3</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>82</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 4</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>83</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+						</Term>
+						<Term Id="4" TermType="#x842" Fieldbus="6">
+							<Name>Term 4 (KL2114)</Name>
+							<ImageId>31</ImageId>
+							<Vars VarGrpType="3">
+								<Name>Channel 1</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>84</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 2</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>85</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 3</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>86</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 4</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>87</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+						</Term>
+						<Term Id="5" TermType="#x842" Fieldbus="6">
+							<Name>Term 5 (KL2114)</Name>
+							<ImageId>31</ImageId>
+							<Vars VarGrpType="3">
+								<Name>Channel 1</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>88</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 2</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>89</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 3</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>90</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 4</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>91</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+						</Term>
+						<Term Id="6" TermType="#x580" Fieldbus="6">
+							<Name>Term 6 (KL1408)</Name>
+							<ImageId>7</ImageId>
+							<Vars VarGrpType="3">
+								<Name>Channel 1</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>84</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 2</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>85</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 3</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>86</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 4</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>87</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 5</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>88</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 6</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>89</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 7</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>90</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 8</Name>
+								<Var>
+									<Name>Input</Name>
+									<Type>BIT</Type>
+									<BitOffs>91</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+							</Vars>
+						</Term>
+						<Term Id="7" TermType="#x968" Fieldbus="6">
+							<Name>Term 7 (KL2408)</Name>
+							<ImageId>31</ImageId>
+							<Vars VarGrpType="3">
+								<Name>Channel 1</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>92</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 2</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>93</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 3</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>94</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 4</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>95</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 5</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>96</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 6</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>97</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 7</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>98</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 8</Name>
+								<Var>
+									<Name>Output</Name>
+									<Type>BIT</Type>
+									<BitOffs>99</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+						</Term>
+						<Term Id="8" TermType="#xbec" Fieldbus="6">
+							<Name>Term 8 (KL3052)</Name>
+							<ImageId>33</ImageId>
+							<Vars VarGrpType="3">
+								<Name>Channel 1</Name>
+								<Var>
+									<Name>State</Name>
+									<Type>USINT</Type>
+									<BitOffs>32</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+								<Var DisplayScale="#x4">
+									<Name>Data In</Name>
+									<Type>INT</Type>
+									<BitOffs>40</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+								<Var>
+									<Name>Ctrl</Name>
+									<Type>USINT</Type>
+									<BitOffs>32</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+								<Var DisplayScale="#x4">
+									<Name>Data Out</Name>
+									<Type>INT</Type>
+									<BitOffs>40</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="3">
+								<Name>Channel 2</Name>
+								<Var>
+									<Name>State</Name>
+									<Type>USINT</Type>
+									<BitOffs>56</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+								<Var DisplayScale="#x4">
+									<Name>Data In</Name>
+									<Type>INT</Type>
+									<BitOffs>64</BitOffs>
+									<InOut>0</InOut>
+								</Var>
+								<Var>
+									<Name>Ctrl</Name>
+									<Type>USINT</Type>
+									<BitOffs>56</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+								<Var DisplayScale="#x4">
+									<Name>Data Out</Name>
+									<Type>INT</Type>
+									<BitOffs>64</BitOffs>
+									<InOut>1</InOut>
+								</Var>
+							</Vars>
+						</Term>
+						<Term Id="1" TermType="#x2332" Fieldbus="6">
+							<Name>End Term (KL9010)</Name>
+							<ImageId>32</ImageId>
+						</Term>
+					</BusCoupler>
+					<CxBk/>
+				</Box>
+			</Device>
+		</Io>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500820000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500840000403}" Id="#x02030020"/>
+		<OwnerA Name="TIPC^ProcessControl^ProcessControl Instance">
+			<OwnerB Name="TIID^Device 2 (CX-BK)^Box 1 (CX-BK)">
+				<Link VarA="PlcTask Inputs^drive.RawThermoCouple1Value" VarB="Term 8 (KL3052)^Channel 1^Data In"/>
+				<Link VarA="PlcTask Inputs^drive.RawThermoCouple2Value" VarB="Term 8 (KL3052)^Channel 2^Data In"/>
+				<Link VarA="PlcTask Inputs^drive.RemovalSwitch" VarB="Term 2 (KL1104)^Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^drive.ValveSwitch" VarB="Term 2 (KL1104)^Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^drive.bEstop" VarB="Term 2 (KL1104)^Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^drive.bM1switch" VarB="Term 6 (KL1408)^Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^drive.bM2switch" VarB="Term 6 (KL1408)^Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^drive.bShortFeed" VarB="Term 6 (KL1408)^Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^drive.bStartProcess" VarB="Term 6 (KL1408)^Channel 3^Input"/>
+				<Link VarA="PlcTask Outputs^drive.CloseBottomValve" VarB="Term 3 (KL2114)^Channel 1^Output"/>
+				<Link VarA="PlcTask Outputs^drive.CloseTopValve" VarB="Term 3 (KL2114)^Channel 3^Output"/>
+				<Link VarA="PlcTask Outputs^drive.OpenBottomValve" VarB="Term 3 (KL2114)^Channel 4^Output"/>
+				<Link VarA="PlcTask Outputs^drive.OpenTopValve" VarB="Term 3 (KL2114)^Channel 2^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bEmergencyLamp1" VarB="Term 7 (KL2408)^Channel 3^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bEmptySystemSwitchLamp" VarB="Term 5 (KL2114)^Channel 4^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bFeedMotor2" VarB="Term 7 (KL2408)^Channel 6^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bM1active" VarB="Term 4 (KL2114)^Channel 4^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bM2active" VarB="Term 4 (KL2114)^Channel 3^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bProcessActive" VarB="Term 4 (KL2114)^Channel 1^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bRemovalMotor" VarB="Term 5 (KL2114)^Channel 1^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bRemovalSequenceLamp" VarB="Term 5 (KL2114)^Channel 2^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bVacuum" VarB="Term 7 (KL2408)^Channel 5^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bValveLamp" VarB="Term 4 (KL2114)^Channel 2^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bValveSwitchLamp" VarB="Term 5 (KL2114)^Channel 3^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bfeedmotorSwitchlamp" VarB="Term 7 (KL2408)^Channel 2^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bremovalmotorSwitchlamp" VarB="Term 7 (KL2408)^Channel 1^Output"/>
+				<Link VarA="PlcTask Outputs^drive.bstartprocessSwitchlamp" VarB="Term 7 (KL2408)^Channel 4^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 3 (EtherCAT)^Box 2 (ATV320 EtherCAT)">
+				<Link VarA="PlcTask Inputs^drive.ATV_TPDO_Input1_Status_Word" VarB="Inputs^Status word"/>
+				<Link VarA="PlcTask Inputs^drive.ATV_TPDO_Input2_Control_Effort" VarB="Inputs^Control Effort"/>
+				<Link VarA="PlcTask Outputs^drive.ATV_RPDO_Output1_Control_Word" VarB="Outputs^Control word"/>
+				<Link VarA="PlcTask Outputs^drive.ATV_RPDO_Output2_Target_Velocity" VarB="Outputs^Target Velocity"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmProject>

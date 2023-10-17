@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Scaling" Id="{49c2dd34-2ec2-4425-9c62-41867a3fdf38}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Scaling
+VAR
+END_VAR
+// written 10.07.2023 by Daniel Kelly
+
+// Program provides scaling for the signals from the thermocouples]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[drive.ScaledThermoCouple1Value := drive.RawThermoCouple1Value * (1000.0/32767); // not in use
+drive.ScaledThermoCouple2Value := drive.RawThermoCouple2Value * (1000.0/32767); ]]></ST>
+    </Implementation>
+    <LineIds Name="Scaling">
+      <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

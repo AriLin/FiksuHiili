@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="ProcessLamp" Id="{747cf198-3ab4-4dbe-86f1-8743c6f4571b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM ProcessLamp
+VAR
+END_VAR
+
+// Written 10.08.2023 by Daniel Kelly
+
+// The purpose of this POU is to provide control to the lamps on the 
+// front of the cabinet via their switches]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[drive.bM1active := drive.bM1switch;
+drive.bM2active := drive.bM2switch; 
+drive.bProcessActive := drive.bShortFeed OR drive.bStartProcess;
+drive.bRemovalSequenceLamp := drive.RemovalSwitch;
+drive.bValveLamp := drive.ValveSwitch;
+]]></ST>
+    </Implementation>
+    <LineIds Name="ProcessLamp">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

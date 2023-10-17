@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ATV_Status" Id="{7b75bce7-405f-4773-a1f3-9667c9881dc7}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE ATV_Status :
+(
+    SwitchON_disabled := 592, //0
+	rdy2SwitchON := 561,	// 6 
+	SwitchedON := 563,		// 7 hexadecimal. Motor is in a state, ready to be turned on but not actually on
+	OP_Enabled := 1591		//15 hexadecimal. Motor is actually in operation
+)   WORD := SwitchON_disabled;
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

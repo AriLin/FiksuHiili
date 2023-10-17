@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="Pyrotime_1" Id="{17dd013c-7221-413f-8b8b-ee6aef4acc28}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+
+// These times are for testing. They are much shorter than the original times
+VAR_GLOBAL
+	tStartDelay: TIME := T#1S;
+	tInitFeed: TIME := T#4S; //344s
+	tShortFeed: TIME := T#5S; //118s
+	tTempFall: TIME:= T#2S;
+	tRemovalMotor: TIME := T#5S; //114s
+	tValve2: TIME := T#2S;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

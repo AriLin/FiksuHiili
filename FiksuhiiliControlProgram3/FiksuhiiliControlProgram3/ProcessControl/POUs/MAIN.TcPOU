@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{552b854d-2ec7-4dbd-af65-fc6da06c4304}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[ProcessLamp();
+FullProcess();
+ShortProcess(); 
+FeedMotor1Manualcontrol();
+CabinetSwitch();
+ValveManualControl();
+Scaling();
+FeedMotor2Manualcontrol();
+RemovalProgram();
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="68" Count="9" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

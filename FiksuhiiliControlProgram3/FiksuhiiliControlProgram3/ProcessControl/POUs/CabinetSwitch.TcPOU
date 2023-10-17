@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="CabinetSwitch" Id="{f5738204-d5a1-4210-bf8d-deda767d9d6d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM CabinetSwitch
+VAR
+END_VAR
+
+// Written 08.08.2023 by Daniel Kelly
+
+// Program provides control for the lights inside the switches]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[drive.bEmergencyLamp1 := NOT drive.bEstop; // turns on the lamp inside the emergency switch
+drive.bstartprocessSwitchlamp := drive.bStartProcess OR drive.bShortFeed; // turns on the lamp inside the main switch
+drive.bfeedmotorSwitchlamp := drive.bM1switch; // turns on the lamp inside the main feeding motor switch
+drive.bremovalmotorSwitchlamp := drive.bM2switch; // turns on the lamp inside removal motor switch
+drive.bValveSwitchLamp := drive.ValveSwitch; 
+drive.bEmptySystemSwitchLamp := drive.RemovalSwitch; 
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="CabinetSwitch">
+      <LineId Id="5" Count="0" />
+      <LineId Id="14" Count="2" />
+      <LineId Id="23" Count="1" />
+      <LineId Id="9" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
